@@ -93,11 +93,6 @@ inputs_pcf_before = -1
 
 
 while True:
-#     led = time.ticks_ms()//1000%4
-#     print(led)
-#     if read_bit(56, led) == 1:
-#         write_bit(56, led, 0)
-
     go_right()
     byte = read_byte(56)
     print(print_byte(byte))
@@ -105,24 +100,5 @@ while True:
     for x in range(4,8):
         print("reading pin:",  x ,  read_bit(56, x))
     time.sleep(1)
-    
-    
-    
-#     time.sleep(1)
-#     write_bit(56, 0, 1)
-#     print(read_bit(56, 0))
-# 
-#     
-#     time.sleep(1)
-#     write_bit(56, 0, 0)
-#     print(read_bit(56, 1))
-#       
-#     time.sleep(1)
-#     write_byte(56, b'\xff')
-#     
-#     time.sleep(1)
-#     write_byte(56, b'\xf0')
-#     print(read_byte(56))
-#     print(print_byte())
 
     
