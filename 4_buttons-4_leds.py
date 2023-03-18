@@ -1,10 +1,10 @@
-from machine import Pin, I2C
+from machine import I2C
 import time
 import sh1106
 import machine
 
 # initialize
-i2c = I2C(0, scl=Pin(23), sda=Pin(22), freq=400000)
+i2c = machine.I2C(0, scl=machine.Pin(23), sda=machine.Pin(22), freq=400000)
 i2c.writeto(56, b'\xff')
 #i2c.writeto(56, 0b11111110) this is the same as above.
 
@@ -60,6 +60,7 @@ def parse_byte(byte):
 
 def interrupt(self):
     #check the 4 top pins.
+    time.sleep(0.1)
     for x in range(4,8):
         if read_bit(56, x) == 0:
             #x - 4 --> button 1 on pin 4 becomes pin 0
