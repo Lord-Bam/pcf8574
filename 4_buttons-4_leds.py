@@ -73,6 +73,8 @@ inputs_pcf_before = -1
 pin_interrupt = machine.Pin(19, machine.Pin.IN, machine.Pin.PULL_UP)
 pin_interrupt.irq(trigger = machine.Pin.IRQ_FALLING, handler = interrupt)
 
+pin.irq(trigger=Pin.IRQ_FALLING, handler=callback)
+
 
 while True:
     time.sleep(1)
